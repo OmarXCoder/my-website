@@ -1,0 +1,60 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700;800&family=Roboto:wght@300;400;500;700&display=swap');
+
+html {
+    @apply scroll-smooth;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    @apply font-['Roboto'];
+}
+
+.site-navbar.floating {
+    @apply h-20 bg-white shadow;
+}
+
+.site-brand {
+    text-shadow: 2px 2px 0 rgb(0 0 0 / 0.1);
+}
+
+.service-card .service-card__icon,
+.service-card .service-card__heading,
+.service-card .service-card__underline,
+.service-card .service-card__text {
+    @apply transition-colors duration-300 ease-linear;
+}
+
+.service-card:hover .service-card__underline {
+    background: #fff;
+}
+
+.service-card:hover .service-card__icon,
+.service-card:hover .service-card__heading,
+.service-card:hover .service-card__text {
+    color: #fff;
+}
+
+/* Buttons */
+.btn {
+    @apply inline-flex items-center rounded-md py-3 px-6 text-base leading-none tracking-wider transition-colors duration-300;
+}
+
+.btn.btn-secondary {
+    @apply bg-slate-100 text-slate-700 shadow hover:bg-slate-200;
+}
+
+.btn.btn-primary {
+    @apply bg-amber-400 text-slate-800 shadow hover:bg-amber-300;
+}
+
+.btn.btn-ghost {
+    @apply text-amber-400 hover:text-amber-500;
+}

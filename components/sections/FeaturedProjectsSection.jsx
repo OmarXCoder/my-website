@@ -16,7 +16,7 @@ export default function FeaturedProjectsSection() {
                 ))}
             </div>
 
-            <div className="mt-20 text-center">
+            <div className="mt-14 text-center sm:mt-20">
                 <Link href="/projects">
                     <a className="btn btn-primary uppercase">More Projects</a>
                 </Link>

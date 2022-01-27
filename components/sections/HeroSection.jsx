@@ -4,7 +4,7 @@ import SiteContainer from '../SiteContainer';
 
 export default function HeroSection() {
     return (
-        <header className="flex h-screen flex-col bg-amber-50 pt-24" id="heroSection">
+        <header className="flex h-screen flex-col bg-amber-50 pt-20 md:pt-24" id="heroSection">
             <SiteContainer className="flex flex-1 items-center">
                 <div className="flex flex-1 items-center sm:px-8 md:px-12 lg:px-20">
                     <div className="flex-1">

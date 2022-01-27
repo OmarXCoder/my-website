@@ -97,7 +97,7 @@ export default function SkillsSection() {
                 <i className="fas fa-xs fa-quote-right text-slate-200"></i>
             </p>
 
-            <div className="mt-20 grid grid-cols-2 gap-4 sm:grid-cols-4 lg:grid-cols-8">
+            <div className="mt-14 grid grid-cols-2 gap-4 sm:mt-20 sm:grid-cols-4 lg:grid-cols-8">
                 {SKILLS.map((skill, index) => (
                     <div
                         key={index}

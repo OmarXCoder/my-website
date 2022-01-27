@@ -8,7 +8,7 @@ export default function ProjectCard({ project, className }) {
             <div>
                 <img src={project.img} alt={project.heading} className="rounded-lg" />
             </div>
-            <div className="flex flex-1 justify-between pt-6 pb-4">
+            <div className="flex-1 pt-6 pb-4 sm:flex sm:justify-between">
                 <div className="flex flex-col justify-between">
                     <div>
                         <h5 className="mb-2 text-lg font-semibold tracking-wider text-slate-800">{project.heading}</h5>
@@ -26,7 +26,7 @@ export default function ProjectCard({ project, className }) {
                     </div>
                 </div>
 
-                <div className="ml-4 flex flex-shrink-0 flex-col justify-end sm:ml-12">
+                <div className="mt-6 flex flex-shrink-0 flex-col sm:mt-0 sm:ml-12 sm:justify-end">
                     <a href={project.link} className="btn btn-primary">
                         <span className="mr-3">View Project</span>
                         <i className="fas fa-long-arrow-alt-right ml-auto"></i>

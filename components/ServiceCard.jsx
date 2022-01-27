@@ -9,7 +9,7 @@ export default function ServiceCard({ service, className }) {
                 <i className={`fa-2x fa-fw ${service.icon}`}></i>
             </div>
             <div className="my-6 flex flex-col items-center">
-                <h5 className="service-card__heading mb-2 text-lg font-semibold capitalize tracking-wider text-slate-700">
+                <h5 className="service-card__heading mb-2 text-center text-lg font-semibold capitalize tracking-wider text-slate-700">
                     {service.heading}
                 </h5>
                 <div className="service-card__underline h-[2px] w-12 bg-amber-400"></div>

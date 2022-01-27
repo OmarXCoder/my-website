@@ -76,12 +76,12 @@ export default function Navbar() {
                 }`}
                 style={{ transitionProperty: 'left, right' }}
             >
-                <div className="flex justify-end md:hidden">
+                <div className="absolute right-0 top-0 flex justify-end md:hidden">
                     <button
-                        className="text-amber-500 transition-colors hover:text-amber-400"
+                        className="p-4 text-amber-500 transition-colors hover:text-amber-400"
                         onClick={() => setMenuOpen(false)}
                     >
-                        <i className="fas fa-3x fa-fw fa-times"></i>
+                        <i className="fas fa-fw fa-times text-4xl"></i>
                     </button>
                 </div>
                 <div className="flex h-full flex-col items-center justify-center">
@@ -90,7 +90,7 @@ export default function Navbar() {
                             return (
                                 <Link href={link.url} key={index}>
                                     <a
-                                        className="mb-14 text-3xl tracking-widest text-slate-400 transition-colors duration-300 hover:text-amber-400"
+                                        className="mb-8 text-3xl tracking-widest text-slate-400 transition-colors duration-300 hover:text-amber-400 sm:mb-14"
                                         onClick={navigate}
                                     >
                                         {link.label}
@@ -100,7 +100,7 @@ export default function Navbar() {
                         }
                     })}
 
-                    <div className="mt-14 flex items-center space-x-8">
+                    <div className="mt-8 flex items-center space-x-6 sm:mt-14 sm:space-x-8">
                         {SOCIAL_LINKS.map((link, index) => (
                             <a
                                 href={link.url}

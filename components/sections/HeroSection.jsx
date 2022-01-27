@@ -6,11 +6,13 @@ export default function HeroSection() {
     return (
         <header className="flex h-screen flex-col bg-amber-50 pt-24" id="heroSection">
             <SiteContainer className="flex flex-1 items-center">
-                <div className="flex flex-1 items-center px-8 md:px-12 lg:px-20">
+                <div className="flex flex-1 items-center sm:px-8 md:px-12 lg:px-20">
                     <div className="flex-1">
                         <div>
                             <div className="mb-2 h-1 w-20 bg-amber-400"></div>
-                            <h1 className="mb-2 text-7xl font-bold tracking-xl text-slate-800">I&apos;m Omar</h1>
+                            <h1 className="mb-2 text-5xl font-bold tracking-xl text-slate-800 sm:text-7xl">
+                                I&apos;m Omar
+                            </h1>
                         </div>
                         <h6 className="mb-6 font-semibold tracking-widest text-slate-500">
                             Freelance Web &amp; Mobile Fullstack Developer

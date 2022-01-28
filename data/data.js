@@ -1,23 +1,32 @@
+export const CONTACT_EMAIL = 'hi@OmarAli.dev';
+export const CONTACT_PHONE = '201145525755';
+export const CONTACT_PHONE_FORMATED = '+2011 455 25 755';
+
 export const NAV_LINKS = [
     {
-        label: 'Home',
-        url: '/#heroSection',
-        hideIn: null,
+        label: 'About',
+        url: '/about',
+        hideIn: ['/', '/about'],
     },
     {
         label: 'Services',
-        url: '/#servicesSection',
-        hideIn: null,
-    },
-    {
-        label: 'Projects',
-        url: '/#projectsSection',
-        hideIn: '/projects',
+        url: '/#services',
+        hideIn: [],
     },
     {
         label: 'Skills',
-        url: '/#skillsSection',
-        hideIn: null,
+        url: '/#skills',
+        hideIn: [],
+    },
+    {
+        label: 'Projects',
+        url: '/#projects',
+        hideIn: ['/about', '/projects'],
+    },
+    {
+        label: 'Projects',
+        url: '/projects',
+        hideIn: ['/', '/projects'],
     },
 ];
 
@@ -67,23 +76,36 @@ export const SERVICES = [
 
 export const PROJECTS = [
     {
+        heading: 'Portfolio Template',
+        date: 'Jan 2022',
+        img: '/img/demo/my-website-screenshot.png',
+        link: 'http://spantags.net/nefertari/demo1/dashboard.ecommerce.html',
+        sourceCodeLink: 'https://github.com/OmarXCoder/my-website',
+        description: 'A personal website & portfolio SSG template buit using NextJs framework.',
+        tags: ['React', 'NextJs', 'Tailwindcss'],
+        featured: true,
+    },
+    {
         heading: 'Nefertari Dashboard',
-        img: '/img/demo/nefertari-1.png',
+        date: 'Jun 2020',
+        img: '/img/demo/nefertari.png',
         link: 'http://spantags.net/nefertari/demo1/dashboard.ecommerce.html',
         description: 'A modern, responsive, two-layout admin dashboard and UI kit.',
         tags: ['HTML', 'Sass', 'Bootstrap'],
         featured: true,
     },
     {
-        heading: 'Infinity',
+        heading: 'Infinity Dashboard',
+        date: 'May 2016',
         img: '/img/demo/infinity.jpg',
         link: 'http://envato.rathemes.com/infinity/',
         description: 'Responsive admin dashboard. Features vast collection of UI components.',
         tags: ['HTML', 'JQuery', 'Bootstrap'],
-        featured: true,
+        featured: false,
     },
     {
-        heading: 'Sphinx',
+        heading: 'Sphinx Dashboard',
+        date: 'Jun 2019',
         img: '/img/demo/sphinx.jpg',
         link: 'http://sphinx.spantags.net/',
         description: 'Admin dashboard built for the themeforest market using Vue & Vuetify.',
@@ -92,6 +114,7 @@ export const PROJECTS = [
     },
     {
         heading: 'Infinity Landing Page',
+        date: 'Jul 2016',
         img: '/img/demo/infinity-landing-page.jpg',
         link: 'http://envato.rathemes.com/infinity/landing-page.html',
         description: 'A sleek bootstrap landing page. Can be used for ad campaigns.',
@@ -99,18 +122,11 @@ export const PROJECTS = [
         featured: true,
     },
     {
-        heading: 'Luxury',
+        heading: 'Luxury Dashboard',
+        date: 'Nov 2017',
         img: '/img/demo/luxury.jpg',
         link: 'http://spantags.net/luxury/',
         description: 'A Feature-rich UI kit and admin dashboard for data-centric projects.',
-        tags: ['HTML', 'JQuery', 'Bootstrap'],
-        featured: false,
-    },
-    {
-        heading: 'Kiwi Dashboard',
-        img: '/img/demo/kiwi.png',
-        link: 'http://spantags.net/kiwi/',
-        description: 'An upgraded version of the Infinity dashboard, built with bootstrap 4',
         tags: ['HTML', 'JQuery', 'Bootstrap'],
         featured: false,
     },

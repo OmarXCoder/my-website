@@ -1,4 +1,4 @@
-import SiteSection from '../SiteSection';
+import PageSection from '../PageSection';
 import {
     JavascriptLogo,
     VueLogo,
@@ -17,6 +17,7 @@ import {
     GitLogo,
     WebpackLogo,
 } from '../Logos';
+import SectionTagline from '../SectionTagline';
 
 const SKILLS = [
     {
@@ -87,21 +88,21 @@ const SKILLS = [
 
 export default function SkillsSection() {
     return (
-        <SiteSection id="skillsSection" heading="Skills &amp; Tools">
-            <p className="mt-6 text-center text-slate-400">
+        <PageSection id="skills" heading="Skills &amp; Tools">
+            <SectionTagline>
                 <i className="fas fa-xs fa-quote-left text-slate-200"></i>
                 <span className="mx-1">
-                    Only those who have the patience to do simple things perfectly <br />
-                    will acquire the skill to do difficult things easily
+                    Only those who have the patience to do simple things perfectly will acquire the skill to do
+                    difficult things easily
                 </span>
                 <i className="fas fa-xs fa-quote-right text-slate-200"></i>
-            </p>
+            </SectionTagline>
 
-            <div className="mt-14 grid grid-cols-2 gap-4 sm:mt-20 sm:grid-cols-4 lg:grid-cols-8">
+            <div className="mt-16 grid grid-cols-2 gap-4 sm:grid-cols-4 md:mt-20 lg:grid-cols-8">
                 {SKILLS.map((skill, index) => (
                     <div
                         key={index}
-                        className="flex flex-col items-center rounded-lg bg-slate-100 p-4 shadow-sm transition-shadow duration-300 hover:shadow"
+                        className="flex flex-col items-center rounded-lg bg-slate-50 p-4 shadow-sm transition-shadow duration-300 hover:shadow"
                     >
                         <skill.icon />
 
@@ -109,6 +110,6 @@ export default function SkillsSection() {
                     </div>
                 ))}
             </div>
-        </SiteSection>
+        </PageSection>
     );
 }

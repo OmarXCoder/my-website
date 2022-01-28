@@ -1,8 +1,8 @@
 import { useRef, useEffect, useState } from 'react';
 import { useRouter } from 'next/router';
 import Link from 'next/link';
-import SiteContainer from './SiteContainer';
-import { NAV_LINKS, SOCIAL_LINKS } from '../data/data';
+import PageContainer from './PageContainer';
+import { CONTACT_EMAIL, NAV_LINKS, SOCIAL_LINKS } from '../data/data';
 
 export default function Navbar() {
     const navbarRef = useRef();
@@ -10,15 +10,20 @@ export default function Navbar() {
     const router = useRouter();
 
     useEffect(() => {
+        // TODO: needs improvement (use debounce for better performance)
         const onScroll = (e) => {
-            if (e.target.documentElement.scrollTop > 100) {
+            if (e.target.documentElement.scrollTop > 50) {
                 navbarRef.current.classList.add('floating');
             } else {
                 navbarRef.current.classList.remove('floating');
             }
         };
+        window.addEventListener('load', onScroll);
         window.addEventListener('scroll', onScroll);
-        return () => window.removeEventListener('scroll', onScroll);
+        return () => {
+            window.removeEventListener('load', onScroll);
+            window.removeEventListener('scroll', onScroll);
+        };
     }, []);
 
     const navigate = (e) => {
@@ -32,16 +37,16 @@ export default function Navbar() {
     return (
         <>
             <nav
-                className="site-navbar fixed inset-x-0 z-50 h-20 duration-300 md:h-24"
+                className="site-navbar fixed inset-x-0 z-50 h-16 bg-amber-50 duration-300 md:h-20 lg:h-24"
                 ref={navbarRef}
-                style={{ transitionProperty: 'background-color, box-shadow, height' }}
+                style={{ transitionProperty: 'box-shadow, height' }}
             >
-                <SiteContainer className="flex h-full items-center">
+                <PageContainer className="flex h-full items-center">
                     <div>
                         <Link href="/">
                             <a className="site-brand flex items-center font-semibold">
                                 <span className="text-xl tracking-wide text-slate-700 md:text-2xl">OMAR</span>
-                                <span className="-rotate-6 text-3xl tracking-wide text-amber-400 md:text-4xl">X</span>
+                                <span className="-rotate-6 text-2xl tracking-wide text-amber-400 md:text-3xl">X</span>
                                 <span className="text-xl tracking-wide text-slate-700 md:text-2xl">CODER</span>
                             </a>
                         </Link>
@@ -49,7 +54,7 @@ export default function Navbar() {
 
                     <div className="ml-auto hidden items-center space-x-8 tracking-widest md:flex">
                         {NAV_LINKS.map((link, index) => {
-                            if (link.hideIn !== router.pathname) {
+                            if (!link.hideIn.includes(router.pathname)) {
                                 return (
                                     <Link href={link.url} key={index}>
                                         <a className="text-lg text-slate-700 transition-colors duration-300 hover:text-amber-400">
@@ -59,6 +64,14 @@ export default function Navbar() {
                                 );
                             }
                         })}
+                        <a
+                            href={`mailto:${CONTACT_EMAIL}`}
+                            target="_blank"
+                            rel="noreferrer"
+                            className="text-lg text-slate-700 transition-colors duration-300 hover:text-amber-400"
+                        >
+                            Contact
+                        </a>
                     </div>
                     <div className="ml-auto md:hidden">
                         <button
@@ -68,7 +81,7 @@ export default function Navbar() {
                             <i className="fas fa-lg fa-fw fa-bars"></i>
                         </button>
                     </div>
-                </SiteContainer>
+                </PageContainer>
             </nav>
             <aside
                 className={`app-menu fixed inset-y-0 z-50 bg-slate-50 p-4 duration-300 md:hidden ${
@@ -86,11 +99,11 @@ export default function Navbar() {
                 </div>
                 <div className="flex h-full flex-col items-center justify-center">
                     {NAV_LINKS.map((link, index) => {
-                        if (link.hideIn !== router.pathname) {
+                        if (!link.hideIn.includes(router.pathname)) {
                             return (
                                 <Link href={link.url} key={index}>
                                     <a
-                                        className="mb-8 text-3xl tracking-widest text-slate-400 transition-colors duration-300 hover:text-amber-400 sm:mb-14"
+                                        className="mb-8 text-3xl tracking-widest text-slate-400 transition-colors duration-300 hover:text-amber-400 sm:mb-16"
                                         onClick={navigate}
                                     >
                                         {link.label}
@@ -100,7 +113,7 @@ export default function Navbar() {
                         }
                     })}
 
-                    <div className="mt-8 flex items-center space-x-6 sm:mt-14 sm:space-x-8">
+                    <div className="mt-8 flex items-center space-x-6 sm:mt-16 sm:space-x-8">
                         {SOCIAL_LINKS.map((link, index) => (
                             <a
                                 href={link.url}

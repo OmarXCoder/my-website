@@ -3,12 +3,7 @@ module.exports = {
     theme: {
         fontFamily: {
             sans: ['Open Sans', 'sans-serif'],
-            serif: ['Merriweather', 'serif'],
-        },
-        extend: {
-            letterSpacing: {
-                xl: '.25rem',
-            },
+            serif: ['Roboto', 'serif'],
         },
     },
     plugins: [],

@@ -1,20 +1,17 @@
-import Head from 'next/head';
-import FeaturedProjectsSection from '../components/sections/FeaturedProjectsSection';
+import HeroSection from '../components/sections/HeroSection';
 import ServicesSection from '../components/sections/ServicesSection';
 import SkillsSection from '../components/sections/SkillsSection';
-import HeroSection from '../components/sections/HeroSection';
+import FeaturedProjectsSection from '../components/sections/FeaturedProjectsSection';
+import ContactMeSection from '../components/sections/ContactMeSection';
 
 export default function Home() {
     return (
         <main>
-            <Head>
-                <title>Omar Ali | Home</title>
-            </Head>
-
             <HeroSection />
             <ServicesSection />
-            <FeaturedProjectsSection />
             <SkillsSection />
+            <FeaturedProjectsSection />
+            <ContactMeSection />
         </main>
     );
 }

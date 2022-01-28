@@ -14,11 +14,11 @@ h3,
 h4,
 h5,
 h6 {
-    @apply font-['Roboto'];
+    @apply font-serif;
 }
 
 .site-navbar.floating {
-    @apply h-20 bg-white shadow;
+    @apply bg-white shadow lg:h-20;
 }
 
 .site-brand {

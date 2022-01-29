@@ -2,11 +2,18 @@ export default function ProjectCard({ project, className }) {
     const classProp = className ?? '';
     return (
         <div
-            className={`flex flex-col overflow-hidden rounded-lg bg-white p-4 shadow duration-500 hover:shadow-md lg:hover:scale-105 ${classProp}`}
-            style={{ transitionProperty: 'transform, box-shadow' }}
+            className={`flex flex-col overflow-hidden rounded-lg bg-white p-4 shadow transition-shadow duration-300 hover:shadow-lg ${classProp}`}
         >
-            <div>
-                <img src={project.img} alt={project.heading} className="rounded-lg" />
+            <div className="relative overflow-hidden rounded-lg">
+                <img src={project.img} alt={project.heading} />
+                {project.comingSoon && (
+                    <div className="absolute inset-0 flex items-center justify-center bg-slate-900/75">
+                        <span className="rounded-md bg-amber-400 py-2 px-6 text-slate-800 shadow">
+                            <i className="far fa-clock"></i>
+                            <span className="ml-2">Coming Soon</span>
+                        </span>
+                    </div>
+                )}
             </div>
             <div className="flex-1 pt-6 pb-4 sm:flex sm:justify-between">
                 <div className="flex flex-col justify-between">
@@ -20,12 +27,9 @@ export default function ProjectCard({ project, className }) {
                         </h5>
                         <p className="text-sm text-slate-500">{project.description}</p>
                     </div>
-                    <div className="mt-8 flex space-x-2">
+                    <div className="-m-1 mt-8 flex flex-wrap">
                         {project.tags.map((tag, index) => (
-                            <span
-                                key={index}
-                                className="rounded-md border-2 py-1 px-2 text-xs text-slate-500 transition-colors duration-300"
-                            >
+                            <span key={index} className="m-1 rounded-md border-2 py-1 px-2 text-xs text-slate-500">
                                 {tag}
                             </span>
                         ))}
@@ -33,10 +37,12 @@ export default function ProjectCard({ project, className }) {
                 </div>
 
                 <div className="mt-6 flex flex-shrink-0 flex-col sm:mt-0 sm:ml-12 sm:justify-end">
-                    <a href={project.link} target="_blank" rel="noreferrer" className="btn btn-primary">
-                        <span className="mr-3">View Project</span>
-                        <i className="fas fa-long-arrow-alt-right ml-auto"></i>
-                    </a>
+                    {!project.comingSoon && project.link && (
+                        <a href={project.link} target="_blank" rel="noreferrer" className="btn btn-primary">
+                            <span className="mr-3">View Demo</span>
+                            <i className="fas fa-long-arrow-alt-right ml-auto"></i>
+                        </a>
+                    )}
                     {project.sourceCodeLink && (
                         <a
                             href={project.sourceCodeLink}

@@ -86,6 +86,17 @@ export const PROJECTS = [
         featured: true,
     },
     {
+        heading: 'Ejarly - Property Manager',
+        date: 'Dec 2021',
+        img: '/img/demo/ejarly.png',
+        link: '#',
+        description:
+            'Property listing and management software that makes managing properties as easy as using social networks.',
+        tags: ['Laravel', 'Vue', 'Inertia', 'MySQL'],
+        featured: true,
+        comingSoon: true,
+    },
+    {
         heading: 'Nefertari Dashboard',
         date: 'Jun 2020',
         img: '/img/demo/nefertari.png',
@@ -93,6 +104,16 @@ export const PROJECTS = [
         description: 'A modern, responsive, two-layout admin dashboard and UI kit.',
         tags: ['HTML', 'Sass', 'Bootstrap'],
         featured: true,
+    },
+    {
+        heading: 'Pubsher',
+        date: 'Dec 2021',
+        img: '/img/demo/pubsher.png',
+        link: null,
+        sourceCodeLink: 'https://github.com/OmarXCoder/pubsher',
+        description: 'Pubsher is a social blogging system. almost a clone of Dev.to website.',
+        tags: ['Laravel', 'Vue', 'Inertia', 'MySQL'],
+        featured: false,
     },
     {
         heading: 'Infinity Dashboard',
@@ -110,7 +131,7 @@ export const PROJECTS = [
         link: 'http://sphinx.spantags.net/',
         description: 'Admin dashboard built for the themeforest market using Vue & Vuetify.',
         tags: ['Javascript', 'Vue', 'Vuetify'],
-        featured: true,
+        featured: false,
     },
     {
         heading: 'Infinity Landing Page',

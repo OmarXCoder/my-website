@@ -16,7 +16,7 @@ export default function SiteFooter() {
                 ))}
             </div>
             <div className="mt-8">
-                <p className="text-lg font-medium tracking-wider text-slate-400">
+                <p className="font-medium tracking-wider text-slate-400 md:text-lg">
                     &copy;2022 Omar Ali &lt;OmarXCoder&gt;
                 </p>
             </div>

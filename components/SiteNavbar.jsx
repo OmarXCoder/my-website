@@ -2,7 +2,8 @@ import { useRef, useEffect, useState } from 'react';
 import { useRouter } from 'next/router';
 import Link from 'next/link';
 import PageContainer from './PageContainer';
-import { CONTACT_EMAIL, NAV_LINKS, SOCIAL_LINKS } from '../data/data';
+import { CONTACT_EMAIL, CONTACT_PHONE, CONTACT_PHONE_FORMATED, NAV_LINKS, SOCIAL_LINKS } from '../data/data';
+import ContactMeCTA from './ContactMeCTA';
 
 export default function Navbar() {
     const navbarRef = useRef();
@@ -113,18 +114,32 @@ export default function Navbar() {
                         }
                     })}
 
-                    <div className="mt-8 flex items-center space-x-6 sm:mt-16 sm:space-x-8">
+                    <div className="my-8 flex items-center space-x-6 sm:space-x-8">
                         {SOCIAL_LINKS.map((link, index) => (
                             <a
                                 href={link.url}
                                 title={link.label}
                                 key={index}
+                                target="_blank"
+                                rel="noreferrer"
                                 className="text-slate-800 transition-colors duration-300 hover:text-amber-400"
                             >
                                 <i className={`${link.icon} text-3xl`}></i>
                             </a>
                         ))}
+
+                        <a
+                            href={`https://wa.me/${CONTACT_PHONE}?text=Hi%20Omar`}
+                            title={CONTACT_PHONE_FORMATED}
+                            target="_blank"
+                            rel="noreferrer"
+                            className="text-slate-800 transition-colors duration-300 hover:text-amber-400"
+                        >
+                            <i className="fab fa-fw fa-whatsapp text-3xl"></i>
+                        </a>
                     </div>
+
+                    <ContactMeCTA />
                 </div>
             </aside>
         </>
